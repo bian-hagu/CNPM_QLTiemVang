@@ -1,4 +1,4 @@
-﻿namespace QuanLyDichVu
+﻿namespace QLTiemVang.GUI
 {
     partial class Main_GUI
     {
@@ -73,29 +73,18 @@
             tabPage3 = new TabPage();
             tabControl2 = new TabControl();
             tabPage6 = new TabPage();
+            dataGridView3 = new DataGridView();
             panel5 = new Panel();
-            dateTimePicker3 = new DateTimePicker();
-            label21 = new Label();
-            label23 = new Label();
-            textBox9 = new TextBox();
-            label25 = new Label();
-            textBox7 = new TextBox();
-            tabPage5 = new TabPage();
-            panel4 = new Panel();
-            numericUpDown8 = new NumericUpDown();
-            label15 = new Label();
-            numericUpDown9 = new NumericUpDown();
-            label16 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            numericUpDown10 = new NumericUpDown();
-            label17 = new Label();
-            label18 = new Label();
-            tabPage7 = new TabPage();
-            tabPage4 = new TabPage();
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
-            dataGridView3 = new DataGridView();
+            dateTimePicker3 = new DateTimePicker();
+            label21 = new Label();
+            textBox7 = new TextBox();
+            label23 = new Label();
+            textBox9 = new TextBox();
+            label25 = new Label();
+            tabPage5 = new TabPage();
             dataGridView4 = new DataGridView();
             panel6 = new Panel();
             button10 = new Button();
@@ -107,6 +96,22 @@
             label20 = new Label();
             textBox10 = new TextBox();
             label22 = new Label();
+            panel4 = new Panel();
+            numericUpDown8 = new NumericUpDown();
+            label15 = new Label();
+            numericUpDown9 = new NumericUpDown();
+            label16 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            numericUpDown10 = new NumericUpDown();
+            label17 = new Label();
+            label18 = new Label();
+            tabPage7 = new TabPage();
+            tabPage4 = new TabPage();
+            dataGridView5 = new DataGridView();
+            panel7 = new Panel();
+            button13 = new Button();
+            comboBox1 = new ComboBox();
+            label24 = new Label();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
@@ -125,15 +130,18 @@
             tabPage3.SuspendLayout();
             tabControl2.SuspendLayout();
             tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             panel5.SuspendLayout();
             tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            panel6.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
-            panel6.SuspendLayout();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // tabPage1
@@ -512,6 +520,7 @@
             button4.TabIndex = 2;
             button4.Text = "Xóa";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -530,6 +539,7 @@
             button6.TabIndex = 0;
             button6.Text = "Thêm";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // tabPage3
             // 
@@ -566,6 +576,15 @@
             tabPage6.Text = "Phiếu bán";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // dataGridView3
+            // 
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(6, 158);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersWidth = 51;
+            dataGridView3.Size = new Size(742, 277);
+            dataGridView3.TabIndex = 6;
+            // 
             // panel5
             // 
             panel5.Controls.Add(button7);
@@ -581,6 +600,35 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(740, 149);
             panel5.TabIndex = 5;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(559, 58);
+            button7.Name = "button7";
+            button7.Size = new Size(94, 30);
+            button7.TabIndex = 24;
+            button7.Text = "Xóa";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(559, 102);
+            button8.Name = "button8";
+            button8.Size = new Size(94, 30);
+            button8.TabIndex = 23;
+            button8.Text = "Sửa";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(559, 15);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 30);
+            button9.TabIndex = 22;
+            button9.Text = "Thêm";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // dateTimePicker3
             // 
@@ -598,6 +646,13 @@
             label21.Size = new Size(69, 20);
             label21.TabIndex = 9;
             label21.Text = "Ngày lập";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(160, 22);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(236, 27);
+            textBox7.TabIndex = 20;
             // 
             // label23
             // 
@@ -624,13 +679,6 @@
             label25.TabIndex = 16;
             label25.Text = "Mã nhà cung cấp";
             // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(160, 22);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(236, 27);
-            textBox7.TabIndex = 20;
-            // 
             // tabPage5
             // 
             tabPage5.Controls.Add(dataGridView4);
@@ -643,6 +691,109 @@
             tabPage5.TabIndex = 0;
             tabPage5.Text = "Phiếu mua";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Location = new Point(6, 161);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 51;
+            dataGridView4.Size = new Size(742, 277);
+            dataGridView4.TabIndex = 8;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(button10);
+            panel6.Controls.Add(button11);
+            panel6.Controls.Add(button12);
+            panel6.Controls.Add(dateTimePicker4);
+            panel6.Controls.Add(label19);
+            panel6.Controls.Add(textBox8);
+            panel6.Controls.Add(label20);
+            panel6.Controls.Add(textBox10);
+            panel6.Controls.Add(label22);
+            panel6.Location = new Point(6, 6);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(740, 149);
+            panel6.TabIndex = 7;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(559, 58);
+            button10.Name = "button10";
+            button10.Size = new Size(94, 30);
+            button10.TabIndex = 24;
+            button10.Text = "Xóa";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(559, 102);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 30);
+            button11.TabIndex = 23;
+            button11.Text = "Sửa";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(559, 15);
+            button12.Name = "button12";
+            button12.Size = new Size(94, 30);
+            button12.TabIndex = 22;
+            button12.Text = "Thêm";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // dateTimePicker4
+            // 
+            dateTimePicker4.Location = new Point(160, 94);
+            dateTimePicker4.MaxDate = new DateTime(2024, 5, 25, 23, 59, 59, 0);
+            dateTimePicker4.Name = "dateTimePicker4";
+            dateTimePicker4.Size = new Size(236, 27);
+            dateTimePicker4.TabIndex = 14;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(13, 99);
+            label19.Name = "label19";
+            label19.Size = new Size(69, 20);
+            label19.TabIndex = 9;
+            label19.Text = "Ngày lập";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(160, 22);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(236, 27);
+            textBox8.TabIndex = 20;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(13, 25);
+            label20.Name = "label20";
+            label20.Size = new Size(141, 20);
+            label20.TabIndex = 21;
+            label20.Text = "Mã phiếu mua hàng";
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(160, 56);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(236, 27);
+            textBox10.TabIndex = 15;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(13, 59);
+            label22.Name = "label22";
+            label22.Size = new Size(109, 20);
+            label22.TabIndex = 16;
+            label22.Text = "Mã khách hàng";
             // 
             // panel4
             // 
@@ -734,6 +885,8 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(dataGridView5);
+            tabPage4.Controls.Add(panel7);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -742,150 +895,59 @@
             tabPage4.Text = "Tồn kho";
             tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // dataGridView5
             // 
-            button7.Location = new Point(559, 58);
-            button7.Name = "button7";
-            button7.Size = new Size(94, 30);
-            button7.TabIndex = 24;
-            button7.Text = "Xóa";
-            button7.UseVisualStyleBackColor = true;
+            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView5.Location = new Point(14, 128);
+            dataGridView5.Name = "dataGridView5";
+            dataGridView5.RowHeadersWidth = 51;
+            dataGridView5.Size = new Size(747, 351);
+            dataGridView5.TabIndex = 1;
             // 
-            // button8
+            // panel7
             // 
-            button8.Location = new Point(559, 102);
-            button8.Name = "button8";
-            button8.Size = new Size(94, 30);
-            button8.TabIndex = 23;
-            button8.Text = "Sửa";
-            button8.UseVisualStyleBackColor = true;
+            panel7.Controls.Add(button13);
+            panel7.Controls.Add(comboBox1);
+            panel7.Controls.Add(label24);
+            panel7.Location = new Point(14, 6);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(747, 116);
+            panel7.TabIndex = 0;
             // 
-            // button9
+            // button13
             // 
-            button9.Location = new Point(559, 15);
-            button9.Name = "button9";
-            button9.Size = new Size(94, 30);
-            button9.TabIndex = 22;
-            button9.Text = "Thêm";
-            button9.UseVisualStyleBackColor = true;
+            button13.Location = new Point(563, 41);
+            button13.Name = "button13";
+            button13.Size = new Size(94, 29);
+            button13.TabIndex = 2;
+            button13.Text = "Xuất";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
-            // dataGridView3
+            // comboBox1
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(6, 158);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(742, 277);
-            dataGridView3.TabIndex = 6;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(130, 42);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 1;
             // 
-            // dataGridView4
+            // label24
             // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(6, 161);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersWidth = 51;
-            dataGridView4.Size = new Size(742, 277);
-            dataGridView4.TabIndex = 8;
+            label24.AutoSize = true;
+            label24.Location = new Point(39, 42);
+            label24.Name = "label24";
+            label24.Size = new Size(85, 20);
+            label24.TabIndex = 0;
+            label24.Text = "Chọn tháng";
             // 
-            // panel6
-            // 
-            panel6.Controls.Add(button10);
-            panel6.Controls.Add(button11);
-            panel6.Controls.Add(button12);
-            panel6.Controls.Add(dateTimePicker4);
-            panel6.Controls.Add(label19);
-            panel6.Controls.Add(textBox8);
-            panel6.Controls.Add(label20);
-            panel6.Controls.Add(textBox10);
-            panel6.Controls.Add(label22);
-            panel6.Location = new Point(6, 6);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(740, 149);
-            panel6.TabIndex = 7;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(559, 58);
-            button10.Name = "button10";
-            button10.Size = new Size(94, 30);
-            button10.TabIndex = 24;
-            button10.Text = "Xóa";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            button11.Location = new Point(559, 102);
-            button11.Name = "button11";
-            button11.Size = new Size(94, 30);
-            button11.TabIndex = 23;
-            button11.Text = "Sửa";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            button12.Location = new Point(559, 15);
-            button12.Name = "button12";
-            button12.Size = new Size(94, 30);
-            button12.TabIndex = 22;
-            button12.Text = "Thêm";
-            button12.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker4
-            // 
-            dateTimePicker4.Location = new Point(160, 94);
-            dateTimePicker4.MaxDate = new DateTime(2024, 5, 25, 23, 59, 59, 0);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(236, 27);
-            dateTimePicker4.TabIndex = 14;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(13, 99);
-            label19.Name = "label19";
-            label19.Size = new Size(69, 20);
-            label19.TabIndex = 9;
-            label19.Text = "Ngày lập";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(160, 22);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(236, 27);
-            textBox8.TabIndex = 20;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(13, 25);
-            label20.Name = "label20";
-            label20.Size = new Size(141, 20);
-            label20.TabIndex = 21;
-            label20.Text = "Mã phiếu mua hàng";
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(160, 56);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(236, 27);
-            textBox10.TabIndex = 15;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(13, 59);
-            label22.Name = "label22";
-            label22.Size = new Size(109, 20);
-            label22.TabIndex = 16;
-            label22.Text = "Mã khách hàng";
-            // 
-            // Form1
+            // Main_GUI
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1513, 697);
             Controls.Add(tabControl1);
-            Name = "Form1";
+            Name = "Main_GUI";
             Text = "Quản lý vàng bạc đá quý";
             Load += Form1_Load;
             tabPage1.ResumeLayout(false);
@@ -909,18 +971,22 @@
             tabPage3.ResumeLayout(false);
             tabControl2.ResumeLayout(false);
             tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown8).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1004,5 +1070,10 @@
         private Label label20;
         private TextBox textBox10;
         private Label label22;
+        private Panel panel7;
+        private Label label24;
+        private DataGridView dataGridView5;
+        private Button button13;
+        private ComboBox comboBox1;
     }
 }
