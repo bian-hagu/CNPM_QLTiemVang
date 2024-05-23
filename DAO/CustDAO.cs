@@ -37,6 +37,24 @@ namespace QLTiemVang.DAO
             return cust;
         }
 
+        public int CountCust()
+        {
+            string query = "select count(MaKhachHang) from KHACHHANG";
+
+            object data = DataProvider.Instance.ExecuteScalar(query);
+            int count = (int)data;
+
+            return count;
+        }
+
+        public void InsertCust(Cust cust)
+        {
+            string query = "EXEC USP_InsertCust " + cust.ID.ToString() + ", N'" + cust.Name + "' , '" + cust.PhoneNum + "'";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+
+
 
     }
 
