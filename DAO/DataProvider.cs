@@ -62,7 +62,7 @@ namespace QLTiemVang.DAO
             return data;
         }
 
-        public int ExecuteNoneQuery(string query, object[] parameter = null)
+        public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,23 @@ namespace QLTiemVang.DTO
 {
     public class Cust
     {
-        public Cust(string iD="", string name="", string phoneNum = "")
+        public Cust(int id = 0, string name="", string phone="")
         {
-            this.iD=iD;
-            this.name=name;
-            this.phoneNum=phoneNum;
+            this.ID = id;
+            this.Name = name;
+            this.PhoneNum = phone;
         }
 
-        private string iD;
-        public string ID { get { return iD; } set { iD = value; } }
+        public Cust(DataRow row)
+        {
+            this.ID = Convert.ToInt32(row["MaKhachHang"]);
+            this.Name = row["Name"].ToString();
+            this.PhoneNum = row["Phone"].ToString();
+        }
+
+
+        private int iD;
+        public int ID { get { return iD; } set { iD = value; } }
 
         private string name;
         public string Name { get { return name; } set { name = value; } }

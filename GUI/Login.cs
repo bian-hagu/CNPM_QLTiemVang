@@ -33,7 +33,8 @@ namespace QLTiemVang.GUI
             {
                 this.Hide();
                 //fHome f = new fHome();
-                fSaleSlip f = new fSaleSlip();
+                //fSaleSlip f = new fSaleSlip();
+                fCust_add f = new fCust_add();
                 f.ShowDialog();
                 this.Close();
             }

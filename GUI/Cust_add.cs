@@ -14,8 +14,8 @@ namespace QLTiemVang.GUI
 {
     public partial class fCust_add : Form
     {
-        public Cust custInfor { get; set; }
-        private Cust cust { get; set; }
+        public Cust returnCust;
+        private Cust selectedCust = new Cust();
 
         private int addButon = 0;
         public fCust_add()
@@ -69,12 +69,12 @@ namespace QLTiemVang.GUI
             if (e.ColumnIndex == 3)
             {
                 DataGridViewRow selectedRow = dgv_Cust.Rows[e.RowIndex];
-                string id = selectedRow.Cells[0].Value.ToString();
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
                 string name = selectedRow.Cells[1].Value.ToString();
                 string phone = selectedRow.Cells[2].Value.ToString();
                 
-                cust = new Cust(id, name, phone);
-                tb_id.Text = id;
+                selectedCust = new Cust(id, name, phone);
+                tb_id.Text = id.ToString();
                 tb_name.Text = name;
                 tb_phone.Text = phone;
 
@@ -83,9 +83,7 @@ namespace QLTiemVang.GUI
 
         private void b_ChoseCust_Click(object sender, EventArgs e)
         {
-            custInfor.ID = cust.ID;
-            custInfor.Name = cust.Name;
-            custInfor.PhoneNum = cust.PhoneNum;
+            returnCust = selectedCust;
             Close();
         }
     }

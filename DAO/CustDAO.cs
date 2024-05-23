@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLTiemVang.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -27,6 +28,16 @@ namespace QLTiemVang.DAO
 
             return data;
         }
+
+        public Cust GetCust(string id)
+        {
+            string query = "USP_GetCust " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            Cust cust = new Cust(data.Rows[0]);
+            return cust;
+        }
+
+
     }
 
 }

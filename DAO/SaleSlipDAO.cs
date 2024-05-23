@@ -5,7 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace QLTiemVang.DAO
 {
@@ -31,11 +33,25 @@ namespace QLTiemVang.DAO
             return count;
         }
 
+        public void InsertSaleSlip(SaleSlip saleSlip)
+        {
+            string query = "EXEC USP_InsertSaleSlip @ID , @DATE ";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] {saleSlip.CustID , saleSlip.Date});
+        }
 
-       //public void InsertSlip()
-       // {
-       //     string query = "EXEC ThemPhieuBanHang @SoPhieu , @NgayLap , @MaKhachHang , @MaSanPham , @LoaiSanPham , @SoLuong , @DonViTinh , @DonGia";
-       //     DataProvider.Instance.ExecuteNoneQuery(query, new object[]{ });
-       // }
+        public int GetSaleSlipID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM PHIEUBANHANG WHERE MaPhieuBanHang =" + id);
+
+            if (data.Rows.Count > 0)
+            {
+                SaleSlip saleSlip = new SaleSlip(data.Rows[0]);
+                return saleSlip.ID;
+            }
+
+            return -1;
+        }
+
+
     }
 }

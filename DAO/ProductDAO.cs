@@ -31,9 +31,15 @@ namespace QLTiemVang.DAO
                 Product product = new Product(item);
                 list.Add(product);
             }
-
-
             return list;
+        }
+
+        public Product GetProduct(string id)
+        {
+            string query = "EXEC USP_GetProductByID " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            Product product = new Product(data.Rows[0]);
+            return product;
         }
 
 

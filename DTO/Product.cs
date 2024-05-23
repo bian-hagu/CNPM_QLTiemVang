@@ -9,7 +9,8 @@ namespace QLTiemVang.DTO
 {
     public class Product
     {
-        public Product(string id,  string name, string type, string unit, float saleprice, float buyprice, decimal profits)
+
+        public Product(int id,  string name, string type, string unit, float saleprice, float buyprice, decimal profits)
         {
             this.ID = id;
             this.Name = name;
@@ -22,17 +23,17 @@ namespace QLTiemVang.DTO
 
         public Product(DataRow row)
         {
-            this.ID = row["MaSanPham"].ToString();
+            this.ID = Convert.ToInt32(row["MaSanPham"]);
             this.Name = row["TenSanPham"].ToString();
             this.Type = row["LoaiSanPham"].ToString();
-            this.Type = row["DonViTinh"].ToString();
-            this.SalePrice = (int)row["DonGiaBan"];
-            this.BuyPrice = (int)row["DonGiaMua"];
-            this.Profits = (decimal)row["PTLN"];
+            this.Unit = row["DonViTinh"].ToString();
+            this.SalePrice = Convert.ToInt32(row["DonGiaBan"]);
+            this.BuyPrice = Convert.ToInt32(row["DonGiaMua"]);
+            this.Profits = Convert.ToDecimal(row["PTLN"]);
         }
 
-        private string iD;
-        public string ID { get { return iD; } set { iD=value; } }
+        private int iD;
+        public int ID { get { return iD; } set { iD=value; } }
 
         private string name;
         public string Name { get { return name; } set { name=value; } }
