@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace QLTiemVang.GUI
 {
@@ -400,9 +401,46 @@ namespace QLTiemVang.GUI
         #endregion
         //-------------------------------------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------------------------------------
-        #region 
+        #region TagSerSlip
+        private void ShowListView4(DataTable data)
+        {
+            lv_ListSerSlip.Items.Clear();
+            int serial = 1;
+
+            foreach (DataRow row in data.Rows)
+            {
+                ListViewItem item = new ListViewItem(serial.ToString());
+                for (int i = 0; i < data.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                lv_ListSerSlip.Items.Add(item);
+                serial++;
+            }
+        }
+
+        private void tb_Search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            DataTable data = ServiceSlipDAO.Instance.Search(tb_Search.Text);
+            ShowListView4(data);
+            lv_ListSerSlip.Refresh();
+        }
+
+
+
 
         #endregion
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 

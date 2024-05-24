@@ -20,6 +20,38 @@ namespace QLTiemVang.DAO
 
         private ServiceSlipDAO() { }
 
+        public DataTable Search(string text = " ")
+        {
+            string query = "EXEC USP_SearchServiceSlip N'%"+text+"%';";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+
+        public List<SaleSlip> GetListSaleSlipInfo(string id)
+        {
+            List<SaleSlip> listSaleSlip = new List<SaleSlip>();
+
+            string query = "SELECT * FROM SANPHAM_BAN WHERE MaPhieuBanHang = " + id;
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                SaleSlip info = new SaleSlip(item);
+                listSaleSlip.Add(info);
+            }
+
+            return listSaleSlip;
+        }
+
+
+
+
+
+
+
         public int CountSerSlip()
         {
             string query = "SELECT COUNT(*) FROM PHIEUDICHVU";

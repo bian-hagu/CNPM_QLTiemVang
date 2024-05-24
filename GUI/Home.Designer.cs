@@ -31,6 +31,7 @@
             ColumnHeader columnHeader1;
             ColumnHeader columnHeader8;
             ColumnHeader columnHeader15;
+            ColumnHeader columnHeader25;
             panel2 = new Panel();
             lvSaleSlip = new ListView();
             columnHeader2 = new ColumnHeader();
@@ -132,10 +133,24 @@
             panel11 = new Panel();
             label1 = new Label();
             tabPage4 = new TabPage();
+            panel17 = new Panel();
+            tb_Search = new TextBox();
+            panel16 = new Panel();
+            lv_ListSerSlip = new ListView();
+            columnHeader26 = new ColumnHeader();
+            columnHeader27 = new ColumnHeader();
+            columnHeader28 = new ColumnHeader();
+            columnHeader29 = new ColumnHeader();
+            columnHeader31 = new ColumnHeader();
+            columnHeader32 = new ColumnHeader();
+            columnHeader34 = new ColumnHeader();
+            panel15 = new Panel();
+            label23 = new Label();
             tabPage5 = new TabPage();
             columnHeader1 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
+            columnHeader25 = new ColumnHeader();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nm_ProductCount).BeginInit();
@@ -157,6 +172,10 @@
             panel13.SuspendLayout();
             panel12.SuspendLayout();
             panel11.SuspendLayout();
+            tabPage4.SuspendLayout();
+            panel17.SuspendLayout();
+            panel16.SuspendLayout();
+            panel15.SuspendLayout();
             SuspendLayout();
             // 
             // columnHeader1
@@ -173,6 +192,11 @@
             // 
             columnHeader15.Text = "STT";
             columnHeader15.Width = 50;
+            // 
+            // columnHeader25
+            // 
+            columnHeader25.Text = "STT";
+            columnHeader25.Width = 50;
             // 
             // panel2
             // 
@@ -904,6 +928,7 @@
             // columnHeader22
             // 
             columnHeader22.Text = "Còn lại";
+            columnHeader22.TextAlign = HorizontalAlignment.Right;
             columnHeader22.Width = 120;
             // 
             // columnHeader23
@@ -1082,6 +1107,9 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(panel17);
+            tabPage4.Controls.Add(panel16);
+            tabPage4.Controls.Add(panel15);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -1089,6 +1117,100 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Danh sách phiếu dịch vụ";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(tb_Search);
+            panel17.Location = new Point(6, 575);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1220, 48);
+            panel17.TabIndex = 13;
+            // 
+            // tb_Search
+            // 
+            tb_Search.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tb_Search.Location = new Point(325, 13);
+            tb_Search.Name = "tb_Search";
+            tb_Search.Size = new Size(602, 23);
+            tb_Search.TabIndex = 0;
+            tb_Search.KeyPress += tb_Search_KeyPress;
+            // 
+            // panel16
+            // 
+            panel16.Controls.Add(lv_ListSerSlip);
+            panel16.Location = new Point(6, 58);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(1220, 511);
+            panel16.TabIndex = 12;
+            // 
+            // lv_ListSerSlip
+            // 
+            lv_ListSerSlip.Columns.AddRange(new ColumnHeader[] { columnHeader25, columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader31, columnHeader32, columnHeader34 });
+            lv_ListSerSlip.Dock = DockStyle.Fill;
+            lv_ListSerSlip.FullRowSelect = true;
+            lv_ListSerSlip.GridLines = true;
+            lv_ListSerSlip.Location = new Point(0, 0);
+            lv_ListSerSlip.MinimumSize = new Size(50, 0);
+            lv_ListSerSlip.Name = "lv_ListSerSlip";
+            lv_ListSerSlip.Size = new Size(1220, 511);
+            lv_ListSerSlip.TabIndex = 12;
+            lv_ListSerSlip.UseCompatibleStateImageBehavior = false;
+            lv_ListSerSlip.View = View.Details;
+            // 
+            // columnHeader26
+            // 
+            columnHeader26.Text = "Số phiếu";
+            columnHeader26.Width = 100;
+            // 
+            // columnHeader27
+            // 
+            columnHeader27.Text = "Ngày lập";
+            columnHeader27.Width = 150;
+            // 
+            // columnHeader28
+            // 
+            columnHeader28.Text = "Khách hàng";
+            columnHeader28.Width = 300;
+            // 
+            // columnHeader29
+            // 
+            columnHeader29.Text = "Tổng tiền";
+            columnHeader29.Width = 150;
+            // 
+            // columnHeader31
+            // 
+            columnHeader31.Text = "Trả trước";
+            columnHeader31.Width = 150;
+            // 
+            // columnHeader32
+            // 
+            columnHeader32.Text = "Còn lại";
+            columnHeader32.Width = 150;
+            // 
+            // columnHeader34
+            // 
+            columnHeader34.Text = "Tình trạng";
+            columnHeader34.Width = 160;
+            // 
+            // panel15
+            // 
+            panel15.Controls.Add(label23);
+            panel15.Location = new Point(6, 6);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(1220, 46);
+            panel15.TabIndex = 11;
+            // 
+            // label23
+            // 
+            label23.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label23.AutoSize = true;
+            label23.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.Location = new Point(392, 5);
+            label23.Name = "label23";
+            label23.Size = new Size(444, 37);
+            label23.TabIndex = 0;
+            label23.Text = "DANH SÁCH PHIẾU DỊCH VỤ";
+            label23.Click += label23_Click;
             // 
             // tabPage5
             // 
@@ -1137,6 +1259,12 @@
             panel12.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
+            panel16.ResumeLayout(false);
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1244,5 +1372,18 @@
         private Label label22;
         private DateTimePicker dtp_Date3;
         private TextBox tb_Price;
+        private Panel panel15;
+        private Label label23;
+        private Panel panel16;
+        private ListView lv_ListSerSlip;
+        private ColumnHeader columnHeader26;
+        private ColumnHeader columnHeader27;
+        private ColumnHeader columnHeader28;
+        private ColumnHeader columnHeader29;
+        private ColumnHeader columnHeader31;
+        private ColumnHeader columnHeader32;
+        private ColumnHeader columnHeader34;
+        private Panel panel17;
+        private TextBox tb_Search;
     }
 }
