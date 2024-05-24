@@ -25,5 +25,4 @@ Mật khẩu: 1
 - Lập phiếu dịch vụ
 - Tra cứu phiếu dịch vụ
 - Lập bảng báo cáo tồn kho
-- Phân quyền truy cập
 - ...
