@@ -38,6 +38,7 @@ namespace QLTiemVang.GUI
             }
             else
             {
+                tb_Password.Clear();
                 MessageBox.Show("Sai mã nhân viên hoặc mật khẩu!");
             }
         }
@@ -46,12 +47,6 @@ namespace QLTiemVang.GUI
         {
             //return AccountDAO.Instance.Login(username, password);
             return true;
-        }
-
-
-        private void fLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

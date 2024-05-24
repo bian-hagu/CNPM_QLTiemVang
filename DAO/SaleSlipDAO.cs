@@ -25,18 +25,17 @@ namespace QLTiemVang.DAO
 
         public int CountSaleSlip()
         {
-            string query = "select Count(MaPhieuMuaHang) from PHIEUMUAHANG";
+            string query = "select Count(MaPhieuBanHang) from PHIEUBANHANG";
 
             object data = DataProvider.Instance.ExecuteScalar(query);
             int count = (int)data;
-
             return count;
         }
 
         public void InsertSaleSlip(SaleSlip saleSlip)
         {
-            string query = "EXEC USP_InsertSaleSlip @ID , @DATE ";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] {saleSlip.CustID , saleSlip.Date});
+            string query = "EXEC USP_InsertSaleSlip @SLIPID , @CUTSID , @DATE ";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] {saleSlip.ID, saleSlip.CustID , saleSlip.Date});
         }
 
         public int GetSaleSlipID(int id)

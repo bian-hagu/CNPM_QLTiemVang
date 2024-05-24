@@ -30,6 +30,7 @@
         {
             ColumnHeader columnHeader1;
             ColumnHeader columnHeader8;
+            ColumnHeader columnHeader15;
             panel2 = new Panel();
             lvSaleSlip = new ListView();
             columnHeader2 = new ColumnHeader();
@@ -59,7 +60,7 @@
             label2 = new Label();
             tabPage2 = new TabPage();
             panel5 = new Panel();
-            listView1 = new ListView();
+            lv_BuySlip = new ListView();
             columnHeader9 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
             columnHeader11 = new ColumnHeader();
@@ -69,22 +70,67 @@
             panel7 = new Panel();
             label6 = new Label();
             panel8 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            tb_Phone_2 = new TextBox();
+            label11 = new Label();
+            tb_Address_2 = new TextBox();
+            l_Address = new Label();
+            tb_Name_2 = new TextBox();
+            tb_date_2 = new TextBox();
+            tb_ID_2 = new TextBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             panel9 = new Panel();
-            button1 = new Button();
-            numericUpDown1 = new NumericUpDown();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
+            b_Completed_2 = new Button();
+            nm_Product_2 = new NumericUpDown();
+            b_Add_2 = new Button();
+            cb_Product_2 = new ComboBox();
             panel10 = new Panel();
-            textBox4 = new TextBox();
+            tb_Total_2 = new TextBox();
             label10 = new Label();
+            tabPage3 = new TabPage();
+            panel14 = new Panel();
+            b_Comleted_3 = new Button();
+            nm_Ser = new NumericUpDown();
+            b_Add_3 = new Button();
+            cb_Ser = new ComboBox();
+            panel13 = new Panel();
+            lv_SerSlip = new ListView();
+            columnHeader16 = new ColumnHeader();
+            columnHeader17 = new ColumnHeader();
+            columnHeader18 = new ColumnHeader();
+            columnHeader19 = new ColumnHeader();
+            columnHeader20 = new ColumnHeader();
+            columnHeader21 = new ColumnHeader();
+            columnHeader22 = new ColumnHeader();
+            columnHeader23 = new ColumnHeader();
+            columnHeader24 = new ColumnHeader();
+            panel12 = new Panel();
+            tb_SumRemain = new TextBox();
+            label17 = new Label();
+            tb_SumRepay = new TextBox();
+            label18 = new Label();
+            tb_Total = new TextBox();
+            label19 = new Label();
+            tb_Phone_3 = new TextBox();
+            label12 = new Label();
+            tb_Custname_3 = new TextBox();
+            tb_Date_3 = new TextBox();
+            tb_ID_3 = new TextBox();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            panel11 = new Panel();
+            label1 = new Label();
+            label13 = new Label();
+            label20 = new Label();
+            tb_OtherCosts = new TextBox();
+            tb_Repay = new TextBox();
+            tabPage4 = new TabPage();
+            tabPage5 = new TabPage();
             columnHeader1 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
+            columnHeader15 = new ColumnHeader();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nm_ProductCount).BeginInit();
@@ -98,8 +144,14 @@
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nm_Product_2).BeginInit();
             panel10.SuspendLayout();
+            tabPage3.SuspendLayout();
+            panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nm_Ser).BeginInit();
+            panel13.SuspendLayout();
+            panel12.SuspendLayout();
+            panel11.SuspendLayout();
             SuspendLayout();
             // 
             // columnHeader1
@@ -111,6 +163,11 @@
             // 
             columnHeader8.Text = "STT";
             columnHeader8.Width = 50;
+            // 
+            // columnHeader15
+            // 
+            columnHeader15.Text = "STT";
+            columnHeader15.Width = 50;
             // 
             // panel2
             // 
@@ -248,6 +305,9 @@
             // 
             t_Home.Controls.Add(tabPage1);
             t_Home.Controls.Add(tabPage2);
+            t_Home.Controls.Add(tabPage3);
+            t_Home.Controls.Add(tabPage4);
+            t_Home.Controls.Add(tabPage5);
             t_Home.Location = new Point(12, 12);
             t_Home.Name = "t_Home";
             t_Home.SelectedIndex = 0;
@@ -373,25 +433,25 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(listView1);
+            panel5.Controls.Add(lv_BuySlip);
             panel5.Location = new Point(6, 127);
             panel5.Name = "panel5";
             panel5.Size = new Size(1220, 368);
             panel5.TabIndex = 15;
             // 
-            // listView1
+            // lv_BuySlip
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
-            listView1.Dock = DockStyle.Fill;
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(0, 0);
-            listView1.MinimumSize = new Size(50, 0);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(1220, 368);
-            listView1.TabIndex = 10;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            lv_BuySlip.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            lv_BuySlip.Dock = DockStyle.Fill;
+            lv_BuySlip.FullRowSelect = true;
+            lv_BuySlip.GridLines = true;
+            lv_BuySlip.Location = new Point(0, 0);
+            lv_BuySlip.MinimumSize = new Size(50, 0);
+            lv_BuySlip.Name = "lv_BuySlip";
+            lv_BuySlip.Size = new Size(1220, 368);
+            lv_BuySlip.TabIndex = 10;
+            lv_BuySlip.UseCompatibleStateImageBehavior = false;
+            lv_BuySlip.View = View.Details;
             // 
             // columnHeader9
             // 
@@ -446,9 +506,13 @@
             // 
             // panel8
             // 
-            panel8.Controls.Add(textBox1);
-            panel8.Controls.Add(textBox2);
-            panel8.Controls.Add(textBox3);
+            panel8.Controls.Add(tb_Phone_2);
+            panel8.Controls.Add(label11);
+            panel8.Controls.Add(tb_Address_2);
+            panel8.Controls.Add(l_Address);
+            panel8.Controls.Add(tb_Name_2);
+            panel8.Controls.Add(tb_date_2);
+            panel8.Controls.Add(tb_ID_2);
             panel8.Controls.Add(label7);
             panel8.Controls.Add(label8);
             panel8.Controls.Add(label9);
@@ -457,34 +521,71 @@
             panel8.Size = new Size(1220, 63);
             panel8.TabIndex = 12;
             // 
-            // textBox1
+            // tb_Phone_2
             // 
-            textBox1.Font = new Font("Segoe UI", 9F);
-            textBox1.ForeColor = SystemColors.WindowText;
-            textBox1.Location = new Point(104, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(317, 23);
-            textBox1.TabIndex = 9;
-            textBox1.Text = "Chưa chọn khách hàng";
+            tb_Phone_2.Font = new Font("Segoe UI", 9F);
+            tb_Phone_2.ForeColor = SystemColors.WindowText;
+            tb_Phone_2.Location = new Point(900, 40);
+            tb_Phone_2.Name = "tb_Phone_2";
+            tb_Phone_2.Size = new Size(235, 23);
+            tb_Phone_2.TabIndex = 13;
             // 
-            // textBox2
+            // label11
             // 
-            textBox2.Location = new Point(799, 8);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(336, 23);
-            textBox2.TabIndex = 8;
+            label11.AutoSize = true;
+            label11.Location = new Point(816, 43);
+            label11.Name = "label11";
+            label11.Size = new Size(76, 15);
+            label11.TabIndex = 12;
+            label11.Text = "Số điện thoại";
             // 
-            // textBox3
+            // tb_Address_2
             // 
-            textBox3.Location = new Point(104, 8);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(317, 23);
-            textBox3.TabIndex = 7;
+            tb_Address_2.Font = new Font("Segoe UI", 9F);
+            tb_Address_2.ForeColor = SystemColors.WindowText;
+            tb_Address_2.Location = new Point(433, 35);
+            tb_Address_2.Name = "tb_Address_2";
+            tb_Address_2.Size = new Size(317, 23);
+            tb_Address_2.TabIndex = 11;
+            // 
+            // l_Address
+            // 
+            l_Address.AutoSize = true;
+            l_Address.Location = new Point(381, 38);
+            l_Address.Name = "l_Address";
+            l_Address.Size = new Size(46, 15);
+            l_Address.TabIndex = 10;
+            l_Address.Text = "Địa chỉ:";
+            // 
+            // tb_Name_2
+            // 
+            tb_Name_2.Font = new Font("Segoe UI", 9F);
+            tb_Name_2.ForeColor = SystemColors.WindowText;
+            tb_Name_2.Location = new Point(104, 35);
+            tb_Name_2.Name = "tb_Name_2";
+            tb_Name_2.Size = new Size(240, 23);
+            tb_Name_2.TabIndex = 9;
+            tb_Name_2.Text = "Chưa chọn nhà cung cấp";
+            tb_Name_2.MouseClick += tb_Name_2_MouseClick;
+            // 
+            // tb_date_2
+            // 
+            tb_date_2.Location = new Point(900, 8);
+            tb_date_2.Name = "tb_date_2";
+            tb_date_2.Size = new Size(235, 23);
+            tb_date_2.TabIndex = 8;
+            // 
+            // tb_ID_2
+            // 
+            tb_ID_2.Location = new Point(104, 8);
+            tb_ID_2.Name = "tb_ID_2";
+            tb_ID_2.Size = new Size(240, 23);
+            tb_ID_2.TabIndex = 7;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(728, 11);
+            label7.Location = new Point(838, 11);
             label7.Name = "label7";
             label7.Size = new Size(54, 15);
             label7.TabIndex = 4;
@@ -495,9 +596,9 @@
             label8.AutoSize = true;
             label8.Location = new Point(20, 38);
             label8.Name = "label8";
-            label8.Size = new Size(73, 15);
+            label8.Size = new Size(84, 15);
             label8.TabIndex = 3;
-            label8.Text = "Khách hàng:";
+            label8.Text = "Nhà cung cấp:";
             // 
             // label9
             // 
@@ -510,69 +611,71 @@
             // 
             // panel9
             // 
-            panel9.Controls.Add(button1);
-            panel9.Controls.Add(numericUpDown1);
-            panel9.Controls.Add(button2);
-            panel9.Controls.Add(comboBox1);
+            panel9.Controls.Add(b_Completed_2);
+            panel9.Controls.Add(nm_Product_2);
+            panel9.Controls.Add(b_Add_2);
+            panel9.Controls.Add(cb_Product_2);
             panel9.Location = new Point(6, 560);
             panel9.Name = "panel9";
             panel9.Size = new Size(1220, 63);
             panel9.TabIndex = 11;
             // 
-            // button1
+            // b_Completed_2
             // 
-            button1.BackColor = Color.FromArgb(128, 255, 128);
-            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1109, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(98, 51);
-            button1.TabIndex = 4;
-            button1.Text = "Lập";
-            button1.UseVisualStyleBackColor = false;
+            b_Completed_2.BackColor = Color.FromArgb(128, 255, 128);
+            b_Completed_2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            b_Completed_2.Location = new Point(1109, 6);
+            b_Completed_2.Name = "b_Completed_2";
+            b_Completed_2.Size = new Size(98, 51);
+            b_Completed_2.TabIndex = 4;
+            b_Completed_2.Text = "Lập";
+            b_Completed_2.UseVisualStyleBackColor = false;
+            b_Completed_2.Click += b_Completed_Click2;
             // 
-            // numericUpDown1
+            // nm_Product_2
             // 
-            numericUpDown1.Location = new Point(889, 22);
-            numericUpDown1.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(83, 23);
-            numericUpDown1.TabIndex = 3;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nm_Product_2.Location = new Point(889, 22);
+            nm_Product_2.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            nm_Product_2.Name = "nm_Product_2";
+            nm_Product_2.Size = new Size(83, 23);
+            nm_Product_2.TabIndex = 3;
+            nm_Product_2.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // button2
+            // b_Add_2
             // 
-            button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(991, 6);
-            button2.Name = "button2";
-            button2.Size = new Size(98, 51);
-            button2.TabIndex = 2;
-            button2.Text = "Thêm";
-            button2.UseVisualStyleBackColor = true;
+            b_Add_2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            b_Add_2.Location = new Point(991, 6);
+            b_Add_2.Name = "b_Add_2";
+            b_Add_2.Size = new Size(98, 51);
+            b_Add_2.TabIndex = 2;
+            b_Add_2.Text = "Thêm";
+            b_Add_2.UseVisualStyleBackColor = true;
+            b_Add_2.Click += b_Add_Click2;
             // 
-            // comboBox1
+            // cb_Product_2
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(32, 22);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(836, 23);
-            comboBox1.TabIndex = 0;
+            cb_Product_2.FormattingEnabled = true;
+            cb_Product_2.Location = new Point(32, 22);
+            cb_Product_2.Name = "cb_Product_2";
+            cb_Product_2.Size = new Size(836, 23);
+            cb_Product_2.TabIndex = 0;
             // 
             // panel10
             // 
-            panel10.Controls.Add(textBox4);
+            panel10.Controls.Add(tb_Total_2);
             panel10.Controls.Add(label10);
             panel10.Location = new Point(6, 501);
             panel10.Name = "panel10";
             panel10.Size = new Size(1220, 53);
             panel10.TabIndex = 13;
             // 
-            // textBox4
+            // tb_Total_2
             // 
-            textBox4.Location = new Point(991, 13);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(216, 23);
-            textBox4.TabIndex = 6;
-            textBox4.TextAlign = HorizontalAlignment.Right;
+            tb_Total_2.Location = new Point(991, 13);
+            tb_Total_2.Name = "tb_Total_2";
+            tb_Total_2.Size = new Size(216, 23);
+            tb_Total_2.TabIndex = 6;
+            tb_Total_2.TextAlign = HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -583,6 +686,363 @@
             label10.Size = new Size(83, 21);
             label10.TabIndex = 7;
             label10.Text = "Tổng tiền";
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(panel14);
+            tabPage3.Controls.Add(panel13);
+            tabPage3.Controls.Add(panel12);
+            tabPage3.Controls.Add(panel11);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(1232, 629);
+            tabPage3.TabIndex = 2;
+            tabPage3.Tag = "t_Ser";
+            tabPage3.Text = "Phiếu dịch vụ";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            panel14.Controls.Add(label20);
+            panel14.Controls.Add(tb_Repay);
+            panel14.Controls.Add(tb_OtherCosts);
+            panel14.Controls.Add(b_Comleted_3);
+            panel14.Controls.Add(nm_Ser);
+            panel14.Controls.Add(label13);
+            panel14.Controls.Add(b_Add_3);
+            panel14.Controls.Add(cb_Ser);
+            panel14.Location = new Point(6, 529);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(1220, 94);
+            panel14.TabIndex = 15;
+            // 
+            // b_Comleted_3
+            // 
+            b_Comleted_3.BackColor = Color.FromArgb(128, 255, 128);
+            b_Comleted_3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            b_Comleted_3.Location = new Point(1110, 22);
+            b_Comleted_3.Name = "b_Comleted_3";
+            b_Comleted_3.Size = new Size(98, 51);
+            b_Comleted_3.TabIndex = 4;
+            b_Comleted_3.Text = "Lập";
+            b_Comleted_3.UseVisualStyleBackColor = false;
+            // 
+            // nm_Ser
+            // 
+            nm_Ser.Location = new Point(889, 22);
+            nm_Ser.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            nm_Ser.Name = "nm_Ser";
+            nm_Ser.Size = new Size(83, 23);
+            nm_Ser.TabIndex = 3;
+            nm_Ser.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // b_Add_3
+            // 
+            b_Add_3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            b_Add_3.Location = new Point(992, 22);
+            b_Add_3.Name = "b_Add_3";
+            b_Add_3.Size = new Size(98, 51);
+            b_Add_3.TabIndex = 2;
+            b_Add_3.Text = "Thêm";
+            b_Add_3.UseVisualStyleBackColor = true;
+            // 
+            // cb_Ser
+            // 
+            cb_Ser.FormattingEnabled = true;
+            cb_Ser.Location = new Point(32, 22);
+            cb_Ser.Name = "cb_Ser";
+            cb_Ser.Size = new Size(836, 23);
+            cb_Ser.TabIndex = 0;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(lv_SerSlip);
+            panel13.Location = new Point(6, 160);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(1220, 363);
+            panel13.TabIndex = 14;
+            // 
+            // lv_SerSlip
+            // 
+            lv_SerSlip.Columns.AddRange(new ColumnHeader[] { columnHeader15, columnHeader16, columnHeader17, columnHeader18, columnHeader19, columnHeader20, columnHeader21, columnHeader22, columnHeader23, columnHeader24 });
+            lv_SerSlip.Dock = DockStyle.Fill;
+            lv_SerSlip.FullRowSelect = true;
+            lv_SerSlip.GridLines = true;
+            lv_SerSlip.Location = new Point(0, 0);
+            lv_SerSlip.MinimumSize = new Size(50, 0);
+            lv_SerSlip.Name = "lv_SerSlip";
+            lv_SerSlip.Size = new Size(1220, 363);
+            lv_SerSlip.TabIndex = 11;
+            lv_SerSlip.UseCompatibleStateImageBehavior = false;
+            lv_SerSlip.View = View.Details;
+            // 
+            // columnHeader16
+            // 
+            columnHeader16.Text = "Loại dịch vụ";
+            columnHeader16.Width = 220;
+            // 
+            // columnHeader17
+            // 
+            columnHeader17.Text = "Đơn giá dịch vụ";
+            columnHeader17.Width = 120;
+            // 
+            // columnHeader18
+            // 
+            columnHeader18.Text = "Đơn giá được tính";
+            columnHeader18.Width = 120;
+            // 
+            // columnHeader19
+            // 
+            columnHeader19.Text = "Số lượng";
+            columnHeader19.Width = 70;
+            // 
+            // columnHeader20
+            // 
+            columnHeader20.Text = "Thành tiền";
+            columnHeader20.TextAlign = HorizontalAlignment.Right;
+            columnHeader20.Width = 150;
+            // 
+            // columnHeader21
+            // 
+            columnHeader21.Text = "Trả trước";
+            columnHeader21.TextAlign = HorizontalAlignment.Right;
+            columnHeader21.Width = 120;
+            // 
+            // columnHeader22
+            // 
+            columnHeader22.Text = "Còn lại";
+            columnHeader22.Width = 120;
+            // 
+            // columnHeader23
+            // 
+            columnHeader23.Text = "Ngày giao";
+            columnHeader23.Width = 120;
+            // 
+            // columnHeader24
+            // 
+            columnHeader24.Text = "Tình trạng";
+            columnHeader24.Width = 120;
+            // 
+            // panel12
+            // 
+            panel12.Controls.Add(tb_SumRemain);
+            panel12.Controls.Add(label17);
+            panel12.Controls.Add(tb_SumRepay);
+            panel12.Controls.Add(label18);
+            panel12.Controls.Add(tb_Total);
+            panel12.Controls.Add(label19);
+            panel12.Controls.Add(tb_Phone_3);
+            panel12.Controls.Add(label12);
+            panel12.Controls.Add(tb_Custname_3);
+            panel12.Controls.Add(tb_Date_3);
+            panel12.Controls.Add(tb_ID_3);
+            panel12.Controls.Add(label14);
+            panel12.Controls.Add(label15);
+            panel12.Controls.Add(label16);
+            panel12.Location = new Point(6, 58);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(1220, 96);
+            panel12.TabIndex = 13;
+            // 
+            // tb_SumRemain
+            // 
+            tb_SumRemain.Font = new Font("Segoe UI", 9F);
+            tb_SumRemain.ForeColor = SystemColors.WindowText;
+            tb_SumRemain.Location = new Point(890, 64);
+            tb_SumRemain.Name = "tb_SumRemain";
+            tb_SumRemain.Size = new Size(301, 23);
+            tb_SumRemain.TabIndex = 19;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(789, 72);
+            label17.Name = "label17";
+            label17.Size = new Size(95, 15);
+            label17.TabIndex = 18;
+            label17.Text = "Tổng tiền còn lại";
+            // 
+            // tb_SumRepay
+            // 
+            tb_SumRepay.Font = new Font("Segoe UI", 9F);
+            tb_SumRepay.ForeColor = SystemColors.WindowText;
+            tb_SumRepay.Location = new Point(495, 64);
+            tb_SumRepay.Name = "tb_SumRepay";
+            tb_SumRepay.Size = new Size(265, 23);
+            tb_SumRepay.TabIndex = 17;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(381, 67);
+            label18.Name = "label18";
+            label18.Size = new Size(108, 15);
+            label18.TabIndex = 16;
+            label18.Text = "Tổng tiền trả trước:";
+            // 
+            // tb_Total
+            // 
+            tb_Total.Font = new Font("Segoe UI", 9F);
+            tb_Total.ForeColor = SystemColors.WindowText;
+            tb_Total.Location = new Point(104, 64);
+            tb_Total.Name = "tb_Total";
+            tb_Total.Size = new Size(240, 23);
+            tb_Total.TabIndex = 15;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(20, 67);
+            label19.Name = "label19";
+            label19.Size = new Size(60, 15);
+            label19.TabIndex = 14;
+            label19.Text = "Tổng tiền:";
+            // 
+            // tb_Phone_3
+            // 
+            tb_Phone_3.Font = new Font("Segoe UI", 9F);
+            tb_Phone_3.ForeColor = SystemColors.WindowText;
+            tb_Phone_3.Location = new Point(890, 35);
+            tb_Phone_3.Name = "tb_Phone_3";
+            tb_Phone_3.Size = new Size(301, 23);
+            tb_Phone_3.TabIndex = 13;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(789, 43);
+            label12.Name = "label12";
+            label12.Size = new Size(76, 15);
+            label12.TabIndex = 12;
+            label12.Text = "Số điện thoại";
+            // 
+            // tb_Custname_3
+            // 
+            tb_Custname_3.Font = new Font("Segoe UI", 9F);
+            tb_Custname_3.ForeColor = SystemColors.WindowText;
+            tb_Custname_3.Location = new Point(104, 35);
+            tb_Custname_3.Name = "tb_Custname_3";
+            tb_Custname_3.Size = new Size(240, 23);
+            tb_Custname_3.TabIndex = 9;
+            tb_Custname_3.Text = "Chưa chọn khách hàng";
+            // 
+            // tb_Date_3
+            // 
+            tb_Date_3.Location = new Point(890, 3);
+            tb_Date_3.Name = "tb_Date_3";
+            tb_Date_3.Size = new Size(301, 23);
+            tb_Date_3.TabIndex = 8;
+            // 
+            // tb_ID_3
+            // 
+            tb_ID_3.Location = new Point(104, 8);
+            tb_ID_3.Name = "tb_ID_3";
+            tb_ID_3.Size = new Size(240, 23);
+            tb_ID_3.TabIndex = 7;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(789, 16);
+            label14.Name = "label14";
+            label14.Size = new Size(54, 15);
+            label14.TabIndex = 4;
+            label14.Text = "Ngày lập";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(20, 38);
+            label15.Name = "label15";
+            label15.Size = new Size(73, 15);
+            label15.TabIndex = 3;
+            label15.Text = "Khách hàng:";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(20, 11);
+            label16.Name = "label16";
+            label16.Size = new Size(56, 15);
+            label16.TabIndex = 2;
+            label16.Text = "Số phiếu:";
+            // 
+            // panel11
+            // 
+            panel11.Controls.Add(label1);
+            panel11.Location = new Point(6, 6);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(1220, 46);
+            panel11.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(506, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(247, 37);
+            label1.TabIndex = 0;
+            label1.Text = "PHIẾU DỊCH VỤ";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(34, 54);
+            label13.Name = "label13";
+            label13.Size = new Size(75, 15);
+            label13.TabIndex = 0;
+            label13.Text = "Chi phí riêng";
+            label13.Click += label13_Click;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(471, 54);
+            label20.Name = "label20";
+            label20.Size = new Size(53, 15);
+            label20.TabIndex = 1;
+            label20.Text = "Trả trước";
+            label20.Click += label20_Click;
+            // 
+            // tb_OtherCosts
+            // 
+            tb_OtherCosts.Font = new Font("Segoe UI", 9F);
+            tb_OtherCosts.ForeColor = SystemColors.WindowText;
+            tb_OtherCosts.Location = new Point(115, 51);
+            tb_OtherCosts.Name = "tb_OtherCosts";
+            tb_OtherCosts.Size = new Size(338, 23);
+            tb_OtherCosts.TabIndex = 17;
+            // 
+            // tb_Repay
+            // 
+            tb_Repay.Font = new Font("Segoe UI", 9F);
+            tb_Repay.ForeColor = SystemColors.WindowText;
+            tb_Repay.Location = new Point(530, 51);
+            tb_Repay.Name = "tb_Repay";
+            tb_Repay.Size = new Size(338, 23);
+            tb_Repay.TabIndex = 18;
+            // 
+            // tabPage4
+            // 
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(1232, 629);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Danh sách phiếu dịch vụ";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(1232, 629);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Lập báo cáo tồn kho";
+            tabPage5.UseVisualStyleBackColor = true;
             // 
             // fSaleSlip
             // 
@@ -610,9 +1070,18 @@
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nm_Product_2).EndInit();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nm_Ser).EndInit();
+            panel13.ResumeLayout(false);
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -623,7 +1092,7 @@
         private ComboBox cbProduct;
         private Button b_Add;
         private NumericUpDown nm_ProductCount;
-        private Label label1;
+        private Label l_Address;
         private Panel panel5;
         private Button b_Completed;
         private ColumnHeader columnHeader1;
@@ -651,13 +1120,13 @@
         private Panel panel7;
         private Label label6;
         private Panel panel8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox tb_Name_2;
+        private TextBox tb_date_2;
+        private TextBox tb_ID_2;
         private Label label7;
         private Label label8;
         private Label label9;
-        private ListView listView1;
+        private ListView lv_BuySlip;
         private ColumnHeader columnHeader9;
         private ColumnHeader columnHeader10;
         private ColumnHeader columnHeader11;
@@ -665,12 +1134,55 @@
         private ColumnHeader columnHeader13;
         private ColumnHeader columnHeader14;
         private Panel panel9;
-        private Button button1;
-        private NumericUpDown numericUpDown1;
-        private Button button2;
-        private ComboBox comboBox1;
+        private Button b_Completed_2;
+        private NumericUpDown nm_Product_2;
+        private Button b_Add_2;
+        private ComboBox cb_Product_2;
         private Panel panel10;
-        private TextBox textBox4;
+        private TextBox tb_Total_2;
         private Label label10;
+        private TextBox tb_Phone_2;
+        private Label label11;
+        private TextBox tb_Address_2;
+        private TabPage tabPage3;
+        private Panel panel11;
+        private Label label1;
+        private Panel panel12;
+        private TextBox tb_Phone_3;
+        private Label label12;
+        private TextBox tb_Custname_3;
+        private TextBox tb_Date_3;
+        private TextBox tb_ID_3;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private TextBox tb_SumRemain;
+        private Label label17;
+        private TextBox tb_SumRepay;
+        private Label label18;
+        private TextBox tb_Total;
+        private Label label19;
+        private Panel panel14;
+        private Button b_Comleted_3;
+        private NumericUpDown nm_Ser;
+        private Button b_Add_3;
+        private ComboBox cb_Ser;
+        private Panel panel13;
+        private ListView lv_SerSlip;
+        private ColumnHeader columnHeader16;
+        private ColumnHeader columnHeader17;
+        private ColumnHeader columnHeader18;
+        private ColumnHeader columnHeader19;
+        private ColumnHeader columnHeader20;
+        private ColumnHeader columnHeader21;
+        private ColumnHeader columnHeader22;
+        private ColumnHeader columnHeader23;
+        private ColumnHeader columnHeader24;
+        private Label label13;
+        private Label label20;
+        private TextBox tb_OtherCosts;
+        private TextBox tb_Repay;
+        private TabPage tabPage4;
+        private TabPage tabPage5;
     }
 }

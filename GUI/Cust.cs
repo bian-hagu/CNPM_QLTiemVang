@@ -13,13 +13,13 @@ using System.Xml.Linq;
 
 namespace QLTiemVang.GUI
 {
-    public partial class fCust_add : Form
+    public partial class fCust : Form
     {
         public Cust returnCust;
         private Cust selectedCust = new Cust();
 
         private int addButon = 0;
-        public fCust_add()
+        public fCust()
         {
             InitializeComponent();
 
@@ -28,16 +28,6 @@ namespace QLTiemVang.GUI
         private void tb_Search_KeyPress(object sender, KeyPressEventArgs e)
         {
             dgv_Cust.DataSource = CustDAO.Instance.Search(tb_Search.Text);
-            if (addButon == 0)
-            {
-                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                btn.HeaderText = "Select";
-                btn.Name = "b_Select";
-                btn.Text = "Select";
-                btn.UseColumnTextForButtonValue = true;
-                dgv_Cust.Columns.Add(btn);
-                addButon = 1;
-            }
             dgv_Cust.Refresh();
         }
 
@@ -48,17 +38,16 @@ namespace QLTiemVang.GUI
             if (addButon == 0)
             {
                 DataGridViewButtonColumn bt_select = new DataGridViewButtonColumn();
-                bt_select.HeaderText = "Select";
+                bt_select.HeaderText = "Chọn";
                 bt_select.Name = "b_Select";
-                bt_select.Text = "Select";
+                bt_select.Text = "Chọn";
                 bt_select.UseColumnTextForButtonValue = true;
                 dgv_Cust.Columns.Add(bt_select);
-                addButon = 1;
 
                 DataGridViewButtonColumn bt_edit = new DataGridViewButtonColumn();
-                bt_edit.HeaderText = "Edit";
+                bt_edit.HeaderText = "Sửa";
                 bt_edit.Name = "b_Edit";
-                bt_edit.Text = "Edit";
+                bt_edit.Text = "Sửa";
                 bt_edit.UseColumnTextForButtonValue = true;
                 dgv_Cust.Columns.Add(bt_edit);
                 addButon = 1;

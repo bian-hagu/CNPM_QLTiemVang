@@ -12,29 +12,28 @@ using System.Windows.Forms;
 
 namespace QLTiemVang.GUI
 {
-    public partial class fCust_edit : Form
+    public partial class fSup_edit : Form
     {
-        public Cust outputcust = new Cust();
-        //public Cust inputcust = new Cust();
+        public Supplier outputSupplier = new Supplier();
 
-        public fCust_edit(Cust inputcust = null)
+        public fSup_edit(Supplier inputSup = null)
         {
-            this.outputcust = inputcust;
+            this.outputSupplier = inputSup;
             InitializeComponent();
             LoadForm();
         }
-
         private void LoadForm()
         {
-            tb_ID.Text = this.outputcust.ID.ToString();
-            tb_Name.Text = this.outputcust.Name;
-            tb_Phone.Text = this.outputcust.PhoneNum;
+            tb_ID.Text = this.outputSupplier.ID.ToString();
+            tb_Name.Text = this.outputSupplier.Name;
+            tb_Address.Text = this.outputSupplier.Address;
+            tb_Phone.Text = this.outputSupplier.PhoneNum;
         }
 
         private void b_OK_Click(object sender, EventArgs e)
         {
-            Cust cust = new Cust(Convert.ToInt32(tb_ID.Text), tb_Name.Text, tb_Phone.Text);
-            CustDAO.Instance.InsertCust(cust);
+            Supplier supplier = new Supplier(Convert.ToInt32(tb_ID.Text), tb_Name.Text, tb_Address.Text, tb_Phone.Text);
+            SupplierDAO.Instance.InsertSupplier(supplier);
             Close();
         }
 
@@ -42,6 +41,5 @@ namespace QLTiemVang.GUI
         {
             Close();
         }
-
     }
 }
