@@ -90,10 +90,19 @@
             label10 = new Label();
             tabPage3 = new TabPage();
             panel14 = new Panel();
-            b_Comleted_3 = new Button();
+            tb_Price = new TextBox();
+            dtp_Date3 = new DateTimePicker();
             nm_Ser = new NumericUpDown();
-            b_Add_3 = new Button();
             cb_Ser = new ComboBox();
+            cb_Status_3 = new ComboBox();
+            label21 = new Label();
+            label22 = new Label();
+            label20 = new Label();
+            tb_Repay = new TextBox();
+            tb_OtherCosts = new TextBox();
+            b_Comleted_3 = new Button();
+            label13 = new Label();
+            b_Add_3 = new Button();
             panel13 = new Panel();
             lv_SerSlip = new ListView();
             columnHeader16 = new ColumnHeader();
@@ -108,9 +117,9 @@
             panel12 = new Panel();
             tb_SumRemain = new TextBox();
             label17 = new Label();
-            tb_SumRepay = new TextBox();
+            tb_SumPrepay = new TextBox();
             label18 = new Label();
-            tb_Total = new TextBox();
+            tb_Total_3 = new TextBox();
             label19 = new Label();
             tb_Phone_3 = new TextBox();
             label12 = new Label();
@@ -122,10 +131,6 @@
             label16 = new Label();
             panel11 = new Panel();
             label1 = new Label();
-            label13 = new Label();
-            label20 = new Label();
-            tb_OtherCosts = new TextBox();
-            tb_Repay = new TextBox();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
             columnHeader1 = new ColumnHeader();
@@ -303,6 +308,7 @@
             // 
             // t_Home
             // 
+            t_Home.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             t_Home.Controls.Add(tabPage1);
             t_Home.Controls.Add(tabPage2);
             t_Home.Controls.Add(tabPage3);
@@ -630,7 +636,6 @@
             b_Completed_2.TabIndex = 4;
             b_Completed_2.Text = "Lập";
             b_Completed_2.UseVisualStyleBackColor = false;
-            b_Completed_2.Click += b_Completed_Click2;
             // 
             // nm_Product_2
             // 
@@ -650,7 +655,6 @@
             b_Add_2.TabIndex = 2;
             b_Add_2.Text = "Thêm";
             b_Add_2.UseVisualStyleBackColor = true;
-            b_Add_2.Click += b_Add_Click2;
             // 
             // cb_Product_2
             // 
@@ -704,63 +708,151 @@
             // 
             // panel14
             // 
+            panel14.Controls.Add(tb_Price);
+            panel14.Controls.Add(dtp_Date3);
+            panel14.Controls.Add(nm_Ser);
+            panel14.Controls.Add(cb_Ser);
+            panel14.Controls.Add(cb_Status_3);
+            panel14.Controls.Add(label21);
+            panel14.Controls.Add(label22);
             panel14.Controls.Add(label20);
             panel14.Controls.Add(tb_Repay);
             panel14.Controls.Add(tb_OtherCosts);
             panel14.Controls.Add(b_Comleted_3);
-            panel14.Controls.Add(nm_Ser);
             panel14.Controls.Add(label13);
             panel14.Controls.Add(b_Add_3);
-            panel14.Controls.Add(cb_Ser);
-            panel14.Location = new Point(6, 529);
+            panel14.Location = new Point(6, 474);
             panel14.Name = "panel14";
-            panel14.Size = new Size(1220, 94);
+            panel14.Size = new Size(1220, 149);
             panel14.TabIndex = 15;
             // 
-            // b_Comleted_3
+            // tb_Price
             // 
-            b_Comleted_3.BackColor = Color.FromArgb(128, 255, 128);
-            b_Comleted_3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            b_Comleted_3.Location = new Point(1110, 22);
-            b_Comleted_3.Name = "b_Comleted_3";
-            b_Comleted_3.Size = new Size(98, 51);
-            b_Comleted_3.TabIndex = 4;
-            b_Comleted_3.Text = "Lập";
-            b_Comleted_3.UseVisualStyleBackColor = false;
+            tb_Price.Font = new Font("Segoe UI", 9F);
+            tb_Price.ForeColor = SystemColors.WindowText;
+            tb_Price.Location = new Point(820, 103);
+            tb_Price.Name = "tb_Price";
+            tb_Price.Size = new Size(140, 23);
+            tb_Price.TabIndex = 20;
+            // 
+            // dtp_Date3
+            // 
+            dtp_Date3.Location = new Point(111, 60);
+            dtp_Date3.Name = "dtp_Date3";
+            dtp_Date3.Size = new Size(435, 23);
+            dtp_Date3.TabIndex = 23;
             // 
             // nm_Ser
             // 
-            nm_Ser.Location = new Point(889, 22);
+            nm_Ser.Location = new Point(966, 104);
             nm_Ser.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             nm_Ser.Name = "nm_Ser";
             nm_Ser.Size = new Size(83, 23);
             nm_Ser.TabIndex = 3;
             nm_Ser.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
+            // cb_Ser
+            // 
+            cb_Ser.FormattingEnabled = true;
+            cb_Ser.Location = new Point(30, 104);
+            cb_Ser.Name = "cb_Ser";
+            cb_Ser.Size = new Size(784, 23);
+            cb_Ser.TabIndex = 0;
+            cb_Ser.SelectedIndexChanged += cb_Ser_SelectedIndexChanged;
+            // 
+            // cb_Status_3
+            // 
+            cb_Status_3.FormattingEnabled = true;
+            cb_Status_3.Items.AddRange(new object[] { "Chưa giao", "Đã giao" });
+            cb_Status_3.Location = new Point(657, 60);
+            cb_Status_3.Name = "cb_Status_3";
+            cb_Status_3.Size = new Size(392, 23);
+            cb_Status_3.TabIndex = 22;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(590, 63);
+            label21.Name = "label21";
+            label21.Size = new Size(61, 15);
+            label21.TabIndex = 20;
+            label21.Text = "Tình trạng";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(30, 63);
+            label22.Name = "label22";
+            label22.Size = new Size(61, 15);
+            label22.TabIndex = 19;
+            label22.Text = "Ngày giao";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(598, 22);
+            label20.Name = "label20";
+            label20.Size = new Size(53, 15);
+            label20.TabIndex = 1;
+            label20.Text = "Trả trước";
+            // 
+            // tb_Repay
+            // 
+            tb_Repay.Font = new Font("Segoe UI", 9F);
+            tb_Repay.ForeColor = SystemColors.WindowText;
+            tb_Repay.Location = new Point(657, 19);
+            tb_Repay.Name = "tb_Repay";
+            tb_Repay.Size = new Size(392, 23);
+            tb_Repay.TabIndex = 18;
+            // 
+            // tb_OtherCosts
+            // 
+            tb_OtherCosts.Font = new Font("Segoe UI", 9F);
+            tb_OtherCosts.ForeColor = SystemColors.WindowText;
+            tb_OtherCosts.Location = new Point(111, 19);
+            tb_OtherCosts.Name = "tb_OtherCosts";
+            tb_OtherCosts.Size = new Size(435, 23);
+            tb_OtherCosts.TabIndex = 17;
+            tb_OtherCosts.Text = "0";
+            // 
+            // b_Comleted_3
+            // 
+            b_Comleted_3.BackColor = Color.FromArgb(128, 255, 128);
+            b_Comleted_3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            b_Comleted_3.Location = new Point(1093, 76);
+            b_Comleted_3.Name = "b_Comleted_3";
+            b_Comleted_3.Size = new Size(98, 51);
+            b_Comleted_3.TabIndex = 4;
+            b_Comleted_3.Text = "Lập";
+            b_Comleted_3.UseVisualStyleBackColor = false;
+            b_Comleted_3.Click += b_Completed_Click3;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(30, 22);
+            label13.Name = "label13";
+            label13.Size = new Size(75, 15);
+            label13.TabIndex = 0;
+            label13.Text = "Chi phí riêng";
+            // 
             // b_Add_3
             // 
             b_Add_3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            b_Add_3.Location = new Point(992, 22);
+            b_Add_3.Location = new Point(1093, 19);
             b_Add_3.Name = "b_Add_3";
             b_Add_3.Size = new Size(98, 51);
             b_Add_3.TabIndex = 2;
             b_Add_3.Text = "Thêm";
             b_Add_3.UseVisualStyleBackColor = true;
-            // 
-            // cb_Ser
-            // 
-            cb_Ser.FormattingEnabled = true;
-            cb_Ser.Location = new Point(32, 22);
-            cb_Ser.Name = "cb_Ser";
-            cb_Ser.Size = new Size(836, 23);
-            cb_Ser.TabIndex = 0;
+            b_Add_3.Click += b_Add_Click3;
             // 
             // panel13
             // 
             panel13.Controls.Add(lv_SerSlip);
             panel13.Location = new Point(6, 160);
             panel13.Name = "panel13";
-            panel13.Size = new Size(1220, 363);
+            panel13.Size = new Size(1220, 308);
             panel13.TabIndex = 14;
             // 
             // lv_SerSlip
@@ -772,7 +864,7 @@
             lv_SerSlip.Location = new Point(0, 0);
             lv_SerSlip.MinimumSize = new Size(50, 0);
             lv_SerSlip.Name = "lv_SerSlip";
-            lv_SerSlip.Size = new Size(1220, 363);
+            lv_SerSlip.Size = new Size(1220, 308);
             lv_SerSlip.TabIndex = 11;
             lv_SerSlip.UseCompatibleStateImageBehavior = false;
             lv_SerSlip.View = View.Details;
@@ -828,9 +920,9 @@
             // 
             panel12.Controls.Add(tb_SumRemain);
             panel12.Controls.Add(label17);
-            panel12.Controls.Add(tb_SumRepay);
+            panel12.Controls.Add(tb_SumPrepay);
             panel12.Controls.Add(label18);
-            panel12.Controls.Add(tb_Total);
+            panel12.Controls.Add(tb_Total_3);
             panel12.Controls.Add(label19);
             panel12.Controls.Add(tb_Phone_3);
             panel12.Controls.Add(label12);
@@ -863,14 +955,14 @@
             label17.TabIndex = 18;
             label17.Text = "Tổng tiền còn lại";
             // 
-            // tb_SumRepay
+            // tb_SumPrepay
             // 
-            tb_SumRepay.Font = new Font("Segoe UI", 9F);
-            tb_SumRepay.ForeColor = SystemColors.WindowText;
-            tb_SumRepay.Location = new Point(495, 64);
-            tb_SumRepay.Name = "tb_SumRepay";
-            tb_SumRepay.Size = new Size(265, 23);
-            tb_SumRepay.TabIndex = 17;
+            tb_SumPrepay.Font = new Font("Segoe UI", 9F);
+            tb_SumPrepay.ForeColor = SystemColors.WindowText;
+            tb_SumPrepay.Location = new Point(495, 64);
+            tb_SumPrepay.Name = "tb_SumPrepay";
+            tb_SumPrepay.Size = new Size(265, 23);
+            tb_SumPrepay.TabIndex = 17;
             // 
             // label18
             // 
@@ -881,14 +973,14 @@
             label18.TabIndex = 16;
             label18.Text = "Tổng tiền trả trước:";
             // 
-            // tb_Total
+            // tb_Total_3
             // 
-            tb_Total.Font = new Font("Segoe UI", 9F);
-            tb_Total.ForeColor = SystemColors.WindowText;
-            tb_Total.Location = new Point(104, 64);
-            tb_Total.Name = "tb_Total";
-            tb_Total.Size = new Size(240, 23);
-            tb_Total.TabIndex = 15;
+            tb_Total_3.Font = new Font("Segoe UI", 9F);
+            tb_Total_3.ForeColor = SystemColors.WindowText;
+            tb_Total_3.Location = new Point(104, 64);
+            tb_Total_3.Name = "tb_Total_3";
+            tb_Total_3.Size = new Size(240, 23);
+            tb_Total_3.TabIndex = 15;
             // 
             // label19
             // 
@@ -911,7 +1003,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(789, 43);
+            label12.Location = new Point(789, 38);
             label12.Name = "label12";
             label12.Size = new Size(76, 15);
             label12.TabIndex = 12;
@@ -926,6 +1018,7 @@
             tb_Custname_3.Size = new Size(240, 23);
             tb_Custname_3.TabIndex = 9;
             tb_Custname_3.Text = "Chưa chọn khách hàng";
+            tb_Custname_3.MouseClick += tb_Name_3_MouseClick;
             // 
             // tb_Date_3
             // 
@@ -944,7 +1037,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(789, 16);
+            label14.Location = new Point(789, 6);
             label14.Name = "label14";
             label14.Size = new Size(54, 15);
             label14.TabIndex = 4;
@@ -986,44 +1079,6 @@
             label1.Size = new Size(247, 37);
             label1.TabIndex = 0;
             label1.Text = "PHIẾU DỊCH VỤ";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(34, 54);
-            label13.Name = "label13";
-            label13.Size = new Size(75, 15);
-            label13.TabIndex = 0;
-            label13.Text = "Chi phí riêng";
-            label13.Click += label13_Click;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(471, 54);
-            label20.Name = "label20";
-            label20.Size = new Size(53, 15);
-            label20.TabIndex = 1;
-            label20.Text = "Trả trước";
-            label20.Click += label20_Click;
-            // 
-            // tb_OtherCosts
-            // 
-            tb_OtherCosts.Font = new Font("Segoe UI", 9F);
-            tb_OtherCosts.ForeColor = SystemColors.WindowText;
-            tb_OtherCosts.Location = new Point(115, 51);
-            tb_OtherCosts.Name = "tb_OtherCosts";
-            tb_OtherCosts.Size = new Size(338, 23);
-            tb_OtherCosts.TabIndex = 17;
-            // 
-            // tb_Repay
-            // 
-            tb_Repay.Font = new Font("Segoe UI", 9F);
-            tb_Repay.ForeColor = SystemColors.WindowText;
-            tb_Repay.Location = new Point(530, 51);
-            tb_Repay.Name = "tb_Repay";
-            tb_Repay.Size = new Size(338, 23);
-            tb_Repay.TabIndex = 18;
             // 
             // tabPage4
             // 
@@ -1158,9 +1213,9 @@
         private Label label16;
         private TextBox tb_SumRemain;
         private Label label17;
-        private TextBox tb_SumRepay;
+        private TextBox tb_SumPrepay;
         private Label label18;
-        private TextBox tb_Total;
+        private TextBox tb_Total_3;
         private Label label19;
         private Panel panel14;
         private Button b_Comleted_3;
@@ -1184,5 +1239,10 @@
         private TextBox tb_Repay;
         private TabPage tabPage4;
         private TabPage tabPage5;
+        private ComboBox cb_Status_3;
+        private Label label21;
+        private Label label22;
+        private DateTimePicker dtp_Date3;
+        private TextBox tb_Price;
     }
 }

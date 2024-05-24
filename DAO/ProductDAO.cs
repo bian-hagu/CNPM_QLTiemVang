@@ -24,7 +24,7 @@ namespace QLTiemVang.DAO
         {
             List<Product> list = new List<Product>();
 
-            string query = "USP_GetProduct";
+            string query = "EXEC USP_GetProduct";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

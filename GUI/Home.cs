@@ -23,17 +23,27 @@ namespace QLTiemVang.GUI
         private BuySlip buySlip = new BuySlip();
         private Supplier supplier = new Supplier();
 
+        private ServiceSlip serviceSlip = new ServiceSlip();
+        private Cust cust2 = new Cust();
+
         private int offset1 = 1;
         private int offset2 = 1;
+        private int offset3 = 1;
 
 
         public fSaleSlip()
         {
             InitializeComponent();
+
             LoadProduct1();
-            LoadProduct2();
             ShowSaleSlip();
+
+            LoadProduct2();
             ShowBuySlip();
+
+            LoadService();
+            ShowSerSlip();
+
         }
         //-------------------------------------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------------------------------------
@@ -42,6 +52,12 @@ namespace QLTiemVang.GUI
         {
             Product product = ProductDAO.Instance.GetProduct(id);
             return product;
+        }
+
+        private Service GetService(string id)
+        {
+            Service service = ServiceDAO.Instance.GetService(id);
+            return service;
         }
         //-------------------------------------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------------------------------------
@@ -242,6 +258,144 @@ namespace QLTiemVang.GUI
         //-------------------------------------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------------------------------------
         #region TagSer
+        private void LoadService()
+        {
+            List<Service> listServices = ServiceDAO.Instance.GetListService();
+            cb_Ser.DataSource = listServices;
+            cb_Ser.DisplayMember = "Name";
+        }
+
+        private void ShowSerSlip()
+        {
+            serviceSlip.ID = ServiceSlipDAO.Instance.CountSerSlip() + offset3;
+            serviceSlip.Date = DateTime.Now.ToString("dd-MM-yyyy");
+            tb_ID_3.Text = serviceSlip.ID.ToString();
+            tb_Date_3.Text = serviceSlip.Date;
+            tb_Custname_3.Text = cust2.Name;
+            tb_Phone_3.Text = cust2.PhoneNum;
+            ShowListView3();
+            offset3 = 0;
+        }
+
+        private void ShowListView3()
+        {
+            lv_SerSlip.Items.Clear();
+            List<ServiceSlipInfo> listSerSlipInfo = SerSlipInfoDAO.Instance.GetListSerSlipInfo(serviceSlip.ID.ToString());
+            float totalPrice = 0;
+            float totalPrepay = 0;
+            float totalRemain = 0;
+            int serial = 1;
+
+            foreach (ServiceSlipInfo item in listSerSlipInfo)
+            {
+                ListViewItem lvItem = new ListViewItem();
+                Service service = GetService(item.SerID.ToString());
+                lvItem.Text = serial.ToString();
+                lvItem.SubItems.Add(service.Name);
+                lvItem.SubItems.Add(item.Price.ToString());
+                lvItem.SubItems.Add((item.Price + item.OtherPrice).ToString());
+                lvItem.SubItems.Add(item.Quanlity.ToString());
+
+                lvItem.SubItems.Add(item.Total.ToString());
+                lvItem.SubItems.Add(item.Prepay.ToString());
+                lvItem.SubItems.Add(item.Remain.ToString());
+                lvItem.SubItems.Add(item.DeliverDay);
+                lvItem.SubItems.Add(item.Status);
+
+                totalPrice += item.Total;
+                totalPrepay += item.Prepay;
+                totalRemain += item.Remain;
+
+                lv_SerSlip.Items.Add(lvItem);
+                serial++;
+            }
+
+            tb_Total_3.Text = totalPrice.ToString("c", culture);
+            tb_SumPrepay.Text = totalPrepay.ToString("c", culture);
+            tb_SumRemain.Text = totalRemain.ToString("c", culture);
+        }
+
+        private void tb_Name_3_MouseClick(object sender, MouseEventArgs e)
+        {
+            fCust cust_Add = new fCust();
+            cust_Add.ShowDialog();
+            if (cust_Add.returnCust !=  new Cust())
+            {
+                cust2 = cust_Add.returnCust;
+                tb_Custname_3.Text = (cust2.Name);
+                tb_Phone_3.Text = (cust2.PhoneNum);
+                serviceSlip.CustID = cust2.ID;
+            }
+        }
+
+        private void b_Add_Click3(object sender, EventArgs e)
+        {
+            int iDSerSlip = ServiceSlipDAO.Instance.GetSerSlipID(serviceSlip.ID);
+            int iDService = (cb_Ser.SelectedItem as Service).ID;
+            Service service = ServiceDAO.Instance.GetService(iDService.ToString());
+
+            int quanlity = (int)nm_Ser.Value;
+            float price = service.Price;
+            float other = Convert.ToInt32(tb_OtherCosts.Text);
+            float total = quanlity * (price + other);
+            float prepay = Convert.ToInt32(tb_Repay.Text);
+            float remain = total - prepay;
+            string date = dtp_Date3.Value.ToString("dd-MM-yyyy");
+            string status = cb_Status_3.Text;
+
+            ServiceSlipInfo serviceSlipInfo = new ServiceSlipInfo(serviceSlip.ID, iDService, quanlity, price, other, total, prepay, remain, date, status);
+
+            if (prepay/remain > 0.5)
+            {
+
+                serviceSlip.Total += serviceSlipInfo.Total;
+                serviceSlip.TotalPrepay += serviceSlipInfo.Prepay;
+                serviceSlip.TotalRemain += serviceSlipInfo.Remain;
+
+                if (serviceSlipInfo.Status == "Chưa giao")
+                    serviceSlip.Status = "Chưa hoàn thành";
+                if (serviceSlip.Status == "")
+                    serviceSlip.Status = "Hoàn thành";
+
+                ServiceSlip slip = new ServiceSlip(serviceSlip.ID, serviceSlip.CustID, serviceSlip.Date, serviceSlip.Total, serviceSlip.TotalPrepay, serviceSlip.TotalRemain, serviceSlip.Status);
+                ServiceSlipDAO.Instance.InsertSerSlip(slip);
+                SerSlipInfoDAO.Instance.InsertSerSlipInfo(serviceSlipInfo);
+            }
+            else
+            {
+                MessageBox.Show("Phải trả trước trên 50% số tiền");
+            }
+            ShowSerSlip();
+        }
+
+        private void b_Completed_Click3(object sender, EventArgs e)
+        {
+            serviceSlip = new ServiceSlip();
+            serviceSlip.ID = ServiceSlipDAO.Instance.CountSerSlip() + 1;
+
+            cust2.Name = "";
+            cust2.PhoneNum = "";
+
+            tb_Total_3.Text = "0";
+            tb_SumPrepay.Text = "0";
+            tb_SumRemain.Text = "0";
+
+            nm_Ser.Value = 0;
+            cb_Ser.SelectedIndex = 0;
+            cb_Status_3.SelectedIndex = 0;
+            tb_Repay.Text = "0";
+            tb_OtherCosts.Text = "0";
+
+            ShowSerSlip();
+            lv_SerSlip.Items.Clear();
+            lv_SerSlip.Refresh();
+        }
+
+        private void cb_Ser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Service ser = cb_Ser.SelectedItem as Service;
+            tb_Price.Text = (ser.Price * Convert.ToInt32(nm_Ser.Value)).ToString("c", culture);
+        }
 
         #endregion
         //-------------------------------------------------------------------------------------------------------------
@@ -250,24 +404,6 @@ namespace QLTiemVang.GUI
 
         #endregion
 
-
-
-
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
