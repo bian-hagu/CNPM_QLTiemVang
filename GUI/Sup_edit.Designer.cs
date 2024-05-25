@@ -100,11 +100,11 @@
             // l_Name
             // 
             l_Name.AutoSize = true;
-            l_Name.Location = new Point(25, 58);
+            l_Name.Location = new Point(15, 58);
             l_Name.Name = "l_Name";
-            l_Name.Size = new Size(90, 15);
+            l_Name.Size = new Size(100, 15);
             l_Name.TabIndex = 11;
-            l_Name.Text = "Tên khách hàng";
+            l_Name.Text = "Tên nhà cung cấp";
             // 
             // tb_ID
             // 
@@ -117,11 +117,11 @@
             // l_ID
             // 
             l_ID.AutoSize = true;
-            l_ID.Location = new Point(26, 18);
+            l_ID.Location = new Point(16, 18);
             l_ID.Name = "l_ID";
-            l_ID.Size = new Size(89, 15);
+            l_ID.Size = new Size(99, 15);
             l_ID.TabIndex = 9;
-            l_ID.Text = "Mã khách hàng";
+            l_ID.Text = "Mã nhà cung cấp";
             // 
             // tb_Phone
             // 

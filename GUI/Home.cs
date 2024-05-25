@@ -490,13 +490,8 @@ namespace QLTiemVang.GUI
                         ReportInfo RP = new ReportInfo(report.ID, product.ID, preMonthQuantity, buyQuantity, saleQuantity, currentMonthQuantity);
                         listRP.Add(RP);
                     }
-
-
                 }
-                lv_Report.Refresh();
-
-
-
+                //lv_Report.Refresh();
             }
         }
         #endregion
