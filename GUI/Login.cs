@@ -45,8 +45,7 @@ namespace QLTiemVang.GUI
 
         bool Login(string username, string password)
         {
-            //return AccountDAO.Instance.Login(username, password);
-            return true;
+            return AccountDAO.Instance.Login(username, password);
         }
     }
 }

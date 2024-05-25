@@ -32,6 +32,7 @@
             ColumnHeader columnHeader8;
             ColumnHeader columnHeader15;
             ColumnHeader columnHeader25;
+            ColumnHeader columnHeader30;
             panel2 = new Panel();
             lvSaleSlip = new ListView();
             columnHeader2 = new ColumnHeader();
@@ -147,10 +148,26 @@
             panel15 = new Panel();
             label23 = new Label();
             tabPage5 = new TabPage();
+            panel20 = new Panel();
+            b_OK = new Button();
+            label25 = new Label();
+            tb_Month = new TextBox();
+            panel19 = new Panel();
+            lv_Report = new ListView();
+            columnHeader33 = new ColumnHeader();
+            columnHeader35 = new ColumnHeader();
+            columnHeader37 = new ColumnHeader();
+            columnHeader38 = new ColumnHeader();
+            columnHeader39 = new ColumnHeader();
+            columnHeader40 = new ColumnHeader();
+            panel18 = new Panel();
+            tb_Export = new Button();
+            label24 = new Label();
             columnHeader1 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
             columnHeader25 = new ColumnHeader();
+            columnHeader30 = new ColumnHeader();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nm_ProductCount).BeginInit();
@@ -176,6 +193,10 @@
             panel17.SuspendLayout();
             panel16.SuspendLayout();
             panel15.SuspendLayout();
+            tabPage5.SuspendLayout();
+            panel20.SuspendLayout();
+            panel19.SuspendLayout();
+            panel18.SuspendLayout();
             SuspendLayout();
             // 
             // columnHeader1
@@ -197,6 +218,11 @@
             // 
             columnHeader25.Text = "STT";
             columnHeader25.Width = 50;
+            // 
+            // columnHeader30
+            // 
+            columnHeader30.Text = "STT";
+            columnHeader30.Width = 100;
             // 
             // panel2
             // 
@@ -828,6 +854,7 @@
             tb_Repay.Name = "tb_Repay";
             tb_Repay.Size = new Size(392, 23);
             tb_Repay.TabIndex = 18;
+            tb_Repay.Text = "0";
             // 
             // tb_OtherCosts
             // 
@@ -970,6 +997,7 @@
             tb_SumRemain.Name = "tb_SumRemain";
             tb_SumRemain.Size = new Size(301, 23);
             tb_SumRemain.TabIndex = 19;
+            tb_SumRemain.Text = "0";
             // 
             // label17
             // 
@@ -988,6 +1016,7 @@
             tb_SumPrepay.Name = "tb_SumPrepay";
             tb_SumPrepay.Size = new Size(265, 23);
             tb_SumPrepay.TabIndex = 17;
+            tb_SumPrepay.Text = "0";
             // 
             // label18
             // 
@@ -1006,6 +1035,7 @@
             tb_Total_3.Name = "tb_Total_3";
             tb_Total_3.Size = new Size(240, 23);
             tb_Total_3.TabIndex = 15;
+            tb_Total_3.Text = "0";
             // 
             // label19
             // 
@@ -1210,16 +1240,140 @@
             label23.Size = new Size(444, 37);
             label23.TabIndex = 0;
             label23.Text = "DANH SÁCH PHIẾU DỊCH VỤ";
-            label23.Click += label23_Click;
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(panel20);
+            tabPage5.Controls.Add(panel19);
+            tabPage5.Controls.Add(panel18);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Size = new Size(1232, 629);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Lập báo cáo tồn kho";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            panel20.Controls.Add(b_OK);
+            panel20.Controls.Add(label25);
+            panel20.Controls.Add(tb_Month);
+            panel20.Location = new Point(3, 55);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(1226, 54);
+            panel20.TabIndex = 14;
+            // 
+            // b_OK
+            // 
+            b_OK.Location = new Point(699, 19);
+            b_OK.Name = "b_OK";
+            b_OK.Size = new Size(75, 23);
+            b_OK.TabIndex = 2;
+            b_OK.Text = "OK";
+            b_OK.UseVisualStyleBackColor = true;
+            b_OK.Click += b_OK_Click;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label25.Location = new Point(461, 17);
+            label25.Name = "label25";
+            label25.Size = new Size(56, 21);
+            label25.TabIndex = 1;
+            label25.Text = "Tháng:";
+            // 
+            // tb_Month
+            // 
+            tb_Month.Location = new Point(538, 19);
+            tb_Month.Name = "tb_Month";
+            tb_Month.Size = new Size(155, 23);
+            tb_Month.TabIndex = 0;
+            // 
+            // panel19
+            // 
+            panel19.Controls.Add(lv_Report);
+            panel19.Location = new Point(3, 115);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(1226, 511);
+            panel19.TabIndex = 13;
+            // 
+            // lv_Report
+            // 
+            lv_Report.Columns.AddRange(new ColumnHeader[] { columnHeader30, columnHeader33, columnHeader35, columnHeader37, columnHeader38, columnHeader39, columnHeader40 });
+            lv_Report.Dock = DockStyle.Fill;
+            lv_Report.FullRowSelect = true;
+            lv_Report.GridLines = true;
+            lv_Report.Location = new Point(0, 0);
+            lv_Report.MinimumSize = new Size(50, 0);
+            lv_Report.Name = "lv_Report";
+            lv_Report.Size = new Size(1226, 511);
+            lv_Report.TabIndex = 13;
+            lv_Report.UseCompatibleStateImageBehavior = false;
+            lv_Report.View = View.Details;
+            // 
+            // columnHeader33
+            // 
+            columnHeader33.Text = "Sản phẩm";
+            columnHeader33.Width = 320;
+            // 
+            // columnHeader35
+            // 
+            columnHeader35.Text = "Tồn đầu";
+            columnHeader35.Width = 140;
+            // 
+            // columnHeader37
+            // 
+            columnHeader37.Text = "Số lượng mua vào";
+            columnHeader37.Width = 160;
+            // 
+            // columnHeader38
+            // 
+            columnHeader38.Text = "Số lượng bán ra";
+            columnHeader38.Width = 160;
+            // 
+            // columnHeader39
+            // 
+            columnHeader39.Text = "Tồn cuối";
+            columnHeader39.Width = 160;
+            // 
+            // columnHeader40
+            // 
+            columnHeader40.Text = "Đơn vị tính";
+            columnHeader40.Width = 160;
+            // 
+            // panel18
+            // 
+            panel18.Controls.Add(tb_Export);
+            panel18.Controls.Add(label24);
+            panel18.Location = new Point(3, 3);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(1226, 46);
+            panel18.TabIndex = 12;
+            // 
+            // tb_Export
+            // 
+            tb_Export.BackColor = Color.Lime;
+            tb_Export.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_Export.ForeColor = SystemColors.ControlText;
+            tb_Export.Location = new Point(1136, 5);
+            tb_Export.Name = "tb_Export";
+            tb_Export.Size = new Size(87, 37);
+            tb_Export.TabIndex = 3;
+            tb_Export.Text = "Xuất";
+            tb_Export.UseVisualStyleBackColor = false;
+            tb_Export.Click += tb_Export_Click;
+            // 
+            // label24
+            // 
+            label24.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label24.AutoSize = true;
+            label24.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.Location = new Point(456, 5);
+            label24.Name = "label24";
+            label24.Size = new Size(318, 37);
+            label24.TabIndex = 0;
+            label24.Text = "BÁO CÁO TỒN KHO";
             // 
             // fSaleSlip
             // 
@@ -1265,6 +1419,12 @@
             panel16.ResumeLayout(false);
             panel15.ResumeLayout(false);
             panel15.PerformLayout();
+            tabPage5.ResumeLayout(false);
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel18.ResumeLayout(false);
+            panel18.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1385,5 +1545,20 @@
         private ColumnHeader columnHeader34;
         private Panel panel17;
         private TextBox tb_Search;
+        private Panel panel20;
+        private Panel panel19;
+        private Panel panel18;
+        private Label label24;
+        private ListView lv_Report;
+        private ColumnHeader columnHeader33;
+        private ColumnHeader columnHeader35;
+        private ColumnHeader columnHeader37;
+        private ColumnHeader columnHeader38;
+        private ColumnHeader columnHeader39;
+        private ColumnHeader columnHeader40;
+        private Label label25;
+        private TextBox tb_Month;
+        private Button b_OK;
+        private Button tb_Export;
     }
 }

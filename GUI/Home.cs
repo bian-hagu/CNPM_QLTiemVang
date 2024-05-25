@@ -45,6 +45,8 @@ namespace QLTiemVang.GUI
             LoadService();
             ShowSerSlip();
 
+            ShowListView5();
+
         }
         //-------------------------------------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------------------------------------
@@ -346,7 +348,7 @@ namespace QLTiemVang.GUI
 
             ServiceSlipInfo serviceSlipInfo = new ServiceSlipInfo(serviceSlip.ID, iDService, quanlity, price, other, total, prepay, remain, date, status);
 
-            if (prepay/remain > 0.5)
+            if ((prepay)/total > 0.5)
             {
 
                 serviceSlip.Total += serviceSlipInfo.Total;
@@ -377,15 +379,16 @@ namespace QLTiemVang.GUI
             cust2.Name = "";
             cust2.PhoneNum = "";
 
-            tb_Total_3.Text = "0";
-            tb_SumPrepay.Text = "0";
-            tb_SumRemain.Text = "0";
-
             nm_Ser.Value = 0;
             cb_Ser.SelectedIndex = 0;
             cb_Status_3.SelectedIndex = 0;
             tb_Repay.Text = "0";
             tb_OtherCosts.Text = "0";
+
+            tb_Total_3.Text = "0";
+            tb_SumPrepay.Text = "0";
+            tb_SumRemain.Text = "0";
+            tb_SumRemain.Refresh();
 
             ShowSerSlip();
             lv_SerSlip.Items.Clear();
@@ -421,27 +424,98 @@ namespace QLTiemVang.GUI
 
         private void tb_Search_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
             DataTable data = ServiceSlipDAO.Instance.Search(tb_Search.Text);
             ShowListView4(data);
             lv_ListSerSlip.Refresh();
         }
+        #endregion
+        #region TagReport
+        private string month;
+        private Report report = new Report();
+        private List<ReportInfo> listRP = new List<ReportInfo>();
+        private void ShowListView5()
+        {
+            lv_Report.Items.Clear();
+            month = tb_Month.Text;
+            if (month != null)
+            {
+                if (month.Length == 1)
+                {
+                    month = "0"+month;
+                }
+                else if (month.Length ==  2)
+                {
+                    report.ID = Convert.ToInt32(month);
+                    report.Month = month;
+
+                    List<Product> products = ProductDAO.Instance.GetListProduct();
+                    DataTable listTotalBuy = ReportDAO.Instance.GetTotalBuyByMonth(month);
+                    DataTable listTotalSale = ReportDAO.Instance.GetTotalSaleByMonth(month);
+                    DataTable listPreMonth = ReportDAO.Instance.GetPreMonth(month);
+
+                    int serial = 1;
+
+                    foreach (Product product in products)
+                    {
+                        // Find corresponding rows in DataTables
+                        DataRow preMonthRow = listPreMonth.AsEnumerable().FirstOrDefault(row => row["MaSanPham"].ToString() == product.ID.ToString());
+                        DataRow buyRow = listTotalBuy.AsEnumerable().FirstOrDefault(row => row["MaSanPham"].ToString() == product.ID.ToString());
+                        DataRow saleRow = listTotalSale.AsEnumerable().FirstOrDefault(row => row["MaSanPham"].ToString() == product.ID.ToString());
+
+                        // Extract values
+                        int preMonthQuantity = preMonthRow != null ? Convert.ToInt32(preMonthRow["TotalStartingInventory"]) : 0;
+                        int buyQuantity = buyRow != null ? Convert.ToInt32(buyRow["TotalQuantityPurchased"]) : 0;
+                        int saleQuantity = saleRow != null ? Convert.ToInt32(saleRow["TotalQuantitySold"]) : 0;
+
+                        // Calculate current month quantity
+                        int currentMonthQuantity = preMonthQuantity + (buyQuantity - saleQuantity);
+
+                        // Create ListViewItem
+                        ListViewItem lvItem = new ListViewItem(serial.ToString());
+                        lvItem.SubItems.Add(product.Name);
+                        lvItem.SubItems.Add(preMonthQuantity.ToString());
+                        lvItem.SubItems.Add(buyQuantity.ToString());
+                        lvItem.SubItems.Add(saleQuantity.ToString());
+                        lvItem.SubItems.Add(currentMonthQuantity.ToString());
+                        lvItem.SubItems.Add(product.Unit);
+
+                        // Assume item.Total is calculated based on some logic
+
+                        // Add to ListView
+                        lv_Report.Items.Add(lvItem);
+
+                        // Update total price
+                        serial++;
+
+                        ReportInfo RP = new ReportInfo(report.ID, product.ID, preMonthQuantity, buyQuantity, saleQuantity, currentMonthQuantity);
+                        listRP.Add(RP);
+                    }
+
+
+                }
+                lv_Report.Refresh();
 
 
 
-
+            }
+        }
         #endregion
 
-        private void label23_Click(object sender, EventArgs e)
+        private void b_OK_Click(object sender, EventArgs e)
         {
-
+            ShowListView5();
+            lv_Report.Refresh();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void tb_Export_Click(object sender, EventArgs e)
         {
+            ReportDAO.Instance.InsertReport(report);
 
+            foreach (ReportInfo item in listRP)
+            {
+                ReportInfoDAO.Instance.InsertReportInfo(item);
+            }
         }
-
     }
 
 }

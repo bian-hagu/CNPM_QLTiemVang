@@ -41,7 +41,5 @@ namespace QLTiemVang.DAO
             Product product = new Product(data.Rows[0]);
             return product;
         }
-
-
     }
 }
