@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTiemVang;
+using QLTiemVang.DAO;
 
 namespace QLTiemVang.GUI
 {
@@ -25,18 +26,26 @@ namespace QLTiemVang.GUI
 
         private void b_Login_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            fHome f = new fHome();
-            f.ShowDialog();
-            this.Show();
+            string username = tb_Username.Text;
+            string password = tb_Password.Text;
+
+            if (Login(username, password))
+            {
+                this.Hide();
+                fSaleSlip f = new fSaleSlip(); 
+                f.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                tb_Password.Clear();
+                MessageBox.Show("Sai mã nhân viên hoặc mật khẩu!");
+            }
         }
 
-        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        bool Login(string username, string password)
         {
-            if (MessageBox.Show("Ban có thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            return AccountDAO.Instance.Login(username, password);
         }
     }
 }

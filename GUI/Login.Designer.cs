@@ -140,7 +140,6 @@
             Name = "fLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
-            FormClosing += fLogin_FormClosing;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
